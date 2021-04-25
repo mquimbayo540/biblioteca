@@ -39,7 +39,7 @@ public class BibliotecaEscolar {
 	By apellido=By.id("apellidos");
 	By email=By.id("email");
 	By telefono=By.id("telefono");
-	By contraseña=By.id("password");
+	By contraseÃ±a=By.id("password");
 	By registrarse=By.linkText("Registrarte");
 	By cancelar=By.linkText("Cancelar");
 	By mensaje=By.id("msg");
@@ -47,7 +47,7 @@ public class BibliotecaEscolar {
 	By botonlogin=By.linkText("Login");
 	By mensajelogin=By.xpath("/html/body/div/div/div[2]/div[2]/div/div/h5");
 	By correologin=By.xpath("//*[@id=\"email\"]");
-	By contraseñalogin=By.xpath("//*[@id=\"password\"]");
+	By contraseÃ±alogin=By.xpath("//*[@id=\"password\"]");
 	By botonsesion=By.linkText("Iniciar sesion");
 	By mensajebienvenido=By.xpath("//*[@id=\"msg\"]/div");
 	By bregistrarse=By.xpath("/html/body/div/div/div[2]/div[2]/div/div/a[2]");
@@ -76,7 +76,7 @@ public class BibliotecaEscolar {
 	  		 driver.findElement(apellido).sendKeys("Amaya");
 	  		 driver.findElement(email).sendKeys("rquimbayo@enigmadev.com");
 	  		 driver.findElement(telefono).sendKeys("3122978644");
-	  		 driver.findElement(contraseña).sendKeys("Ma123@");
+	  		 driver.findElement(contraseÃ±a).sendKeys("Ma123@");
 	  		 
 	  		 driver.findElement(cancelar).click();
 	  		
@@ -103,7 +103,7 @@ public class BibliotecaEscolar {
 		 driver.findElement(apellido).sendKeys("Quimbayo");
 		 driver.findElement(email).sendKeys("mquimbayo@enigmadev.com");
 		 driver.findElement(telefono).sendKeys("3122978643");
-		 driver.findElement(contraseña).sendKeys("Ma123@");
+		 driver.findElement(contraseÃ±a).sendKeys("Ma123@");
 		 
 		 driver.findElement(registrarse).click();
 		
@@ -127,7 +127,7 @@ public class BibliotecaEscolar {
   	  if(driver.findElement(mensajelogin).isDisplayed()) {
   		  
   		  driver.findElement(correologin).sendKeys("mquimbayo@gmail.com");
-  		  driver.findElement(contraseñalogin).sendKeys("Ma123@");
+  		  driver.findElement(contraseÃ±alogin).sendKeys("Ma123@");
   		 driver.findElement(botonsesion).click();
   		
   		 assertTrue(driver.findElement(mensajebienvenido).isDisplayed());
@@ -172,7 +172,7 @@ public class BibliotecaEscolar {
   
   
  @Test
-  /*validación caracteres*/
+  /*validaciÃ³n caracteres*/
  
   public void validandocaracteres() throws InterruptedException {
 	  driver.findElement(botonRegistroLocator).click();
@@ -183,7 +183,7 @@ public class BibliotecaEscolar {
 		  driver.findElement(apellido).sendKeys("Fern1");
 		  driver.findElement(email).sendKeys("malorygmail.com");
 		  driver.findElement(telefono).sendKeys("3115567789684a");
-		  driver.findElement(contraseña).sendKeys("Malorymay");
+		  driver.findElement(contraseÃ±a).sendKeys("Malorymay");
 		  driver.findElement(registrarse).click();
 
 			 
@@ -220,9 +220,9 @@ public class BibliotecaEscolar {
 					 Matcher mather = pattern.matcher((CharSequence) email);
 					 
 					 if (mather.find() == true) {
-				            System.out.println("El email ingresado es válido.");
+				            System.out.println("El email ingresado es vÃ¡lido.");
 				        } else {
-				            System.out.println("El email ingresado es inválido.");
+				            System.out.println("El email ingresado es invÃ¡lido.");
 				        }
 					 
 					 WebElement idt = driver.findElement(telefono);			  
@@ -238,7 +238,7 @@ public class BibliotecaEscolar {
 					        }
 					 }
 					 
-					 WebElement idcc = driver.findElement(contraseña);			  
+					 WebElement idcc = driver.findElement(contraseÃ±a);			  
 					 String texto3=idcc.getText();
 					 assertEquals(20, texto3.length()<=20);
 					 assertEquals(8, texto3.length()==8);
@@ -299,7 +299,7 @@ public class BibliotecaEscolar {
 	  if(driver.findElement(mensajelogin).isDisplayed()) {
 		  
 		  driver.findElement(correologin).sendKeys("");
-		  driver.findElement(contraseñalogin).sendKeys("123");
+		  driver.findElement(contraseÃ±alogin).sendKeys("123");
 		 driver.findElement(botonsesion).click();
 		
 		 assertTrue(driver.findElement(mensaje).isDisplayed());
@@ -313,15 +313,15 @@ public class BibliotecaEscolar {
  }
 @Test
 
-/*Inicio sesion contraseña nulo*/
+/*Inicio sesion contraseÃ±a nulo*/
 
-public void iniciosesiocontraseñalnulo() throws InterruptedException {
+public void iniciosesiocontraseÃ±alnulo() throws InterruptedException {
 	  driver.findElement(botonlogin).click();
 	  Thread.sleep(2000);
 	  if(driver.findElement(mensajelogin).isDisplayed()) {
 		  
 		  driver.findElement(correologin).sendKeys("mquimbayo@enigmadev.com");
-		  driver.findElement(contraseñalogin).sendKeys("");
+		  driver.findElement(contraseÃ±alogin).sendKeys("");
 		 driver.findElement(botonsesion).click();
 		
 		 assertTrue(driver.findElement(mensaje).isDisplayed());
@@ -343,7 +343,7 @@ public void iniciosesiondatosincorrectos() throws InterruptedException {
 	  if(driver.findElement(mensajelogin).isDisplayed()) {
 		  
 		  driver.findElement(correologin).sendKeys("aparras@gmail.com");
-		  driver.findElement(contraseñalogin).sendKeys("123");
+		  driver.findElement(contraseÃ±alogin).sendKeys("123");
 		 driver.findElement(botonsesion).click();
 		
 		 assertTrue(driver.findElement(mensaje).isDisplayed());
@@ -379,6 +379,7 @@ public void ingresoregistrousuariologin() throws InterruptedException {
 }
   @AfterClass
   public void afterClass() {
+	  driver.quit();
   }
 
 }
